@@ -1,0 +1,19 @@
+body{
+	text-colour:$letrasYBordes;
+	background-color: $colorBody ;
+	min-height: 100vh;
+		& div.gridPrincipal{
+			display: grid;
+			min-height: 100vh;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto auto;
+			grid-template-areas: 
+			"header" 
+			"main"  
+			"footer";
+		}
+		& div.contenedor{
+			width: 85%;
+			margin: 0 auto;
+		}
+}

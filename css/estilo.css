@@ -1,0 +1,128 @@
+html {
+  font-size: 62.5%; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: Futura-Bold;
+  src: url(../assets/fuentes/futura_bold.otf); }
+
+body {
+  text-colour: #000;
+  background-color: #e3e3e0;
+  min-height: 100vh; }
+  body div.gridPrincipal {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header"  "main"   "footer"; }
+  body div.contenedor, body main.gridMain div.contenedor, main.gridMain body div.contenedor {
+    width: 85%;
+    margin: 0 auto; }
+
+header {
+  grid-area: header;
+  background-color: #05d18d;
+  height: 9rem; }
+  @media only screen and (max-width: 768px) {
+    header {
+      height: auto; } }
+  header a.logo {
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+    font-family: Futura-Bold;
+    color: #666;
+    text-decoration: none; }
+    @media only screen and (max-width: 768px) {
+      header a.logo {
+        font-size: 2.5rem; } }
+  header li.lista__elemento {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+    @media only screen and (max-width: 768px) {
+      header li.lista__elemento {
+        font-size: 1.3rem; } }
+    header li.lista__elemento a.elemento__link {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #666;
+      text-decoration: none;
+      transition: 0.4 linear;
+      border-radius: 0.5rem; }
+      header li.lista__elemento a.elemento__link:hover {
+        background: #2eff7e; }
+
+main {
+  grid-area: main;
+  min-height: 80vh; }
+  main.gridMain {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "titulo"  "cotizaciones"  "texto"; }
+    main.gridMain div.contenedor {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center; }
+      main.gridMain div.contenedor h1.contenedor__titulo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        letter-spacing: 0.2rem;
+        font-size: 4rem;
+        font-family: Futura-Bold;
+        font-style: bold;
+        text-decoration: underline;
+        margin: 2rem; }
+        @media only screen and (max-width: 768px) {
+          main.gridMain div.contenedor h1.contenedor__titulo {
+            font-size: 1.75rem; } }
+      main.gridMain div.contenedor h1.tituloCentrado {
+        grid-area: titulo; }
+      main.gridMain div.contenedor p.contenedor__texto {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 1.5rem;
+        text-align: justify-all; }
+        @media only screen and (max-width: 768px) {
+          main.gridMain div.contenedor p.contenedor__texto {
+            font-size: 1.3rem; } }
+      main.gridMain div.contenedor p.textoCentrado {
+        grid-area: texto; }
+
+footer {
+  grid-area: footer;
+  background-color: #05d18d;
+  width: 100%;
+  height: 7.5rem;
+  border-top: solid 0.5rem #000;
+  margin-top: 2rem; }
+  footer.gridFooter {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "textoFooter "; }
+    footer.gridFooter div.footerText {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      footer.gridFooter div.footerText p.textoFooter {
+        grid-area: textoFooter;
+        font-family: Futura-Bold;
+        font-size: 2rem; }
+        @media only screen and (max-width: 768px) {
+          footer.gridFooter div.footerText p.textoFooter {
+            font-size: 1.25rem; } }
