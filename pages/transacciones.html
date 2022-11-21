@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <title>Curso JavaScript-Rodriguez Pablo</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 				<div class="contenedor col-12 col-lg-12">
 					<nav class="navbar navbar-expand-lg navbar-light">
 					  	<div class="container-fluid">
-					    	<a class="navbar-brand logo" href="#">Virtual Exchange</a>
+					    	<a class="navbar-brand logo" href="../index.html">Virtual Exchange</a>
 					    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					      	<span class="navbar-toggler-icon"></span>
 					    	</button>
@@ -25,7 +25,7 @@
 					          			<a class="nav-link active elemento__link" aria-current="page" href="https://www.bna.com.ar/Personas">Cotizaciones BNA</a>
 					        		</li>
                                     <li class="nav-item lista__elemento">
-                                        <a class="nav-link active elemento__link" aria-current="page" href="./pages/ingreso.html">Ingreso</a>
+                                        <a class="nav-link active elemento__link" aria-current="page" href="./ingreso.html">Ingreso</a>
                                   </li>
 					      		</ul>
 					    	</div>
@@ -38,17 +38,22 @@
         <div class="contenedor">    
             <h1 class="tituloCentrado contenedor__titulo">Casa de Cambio Virtual</h1>
         </div>
-        <div class="contenedor cotizaciones">
-            <h2>Dolar: $153.83 compra | $156 venta</h2>
-        </div>
-        <div class="contenedor cotizaciones">
-            <h2>Euro: $151.64 compra | $153 venta</h2>
-        </div>
-        <div class="contenedor cotizaciones">
-            <h2>Real: $29.80 compra | $31 venta</h2>
-        </div>
-        <div class="contenedor">
-            <p class="contenedor__texto textoCentrado">Virtual Exchange es la solucion al problema de tener que movilizarte con dinero fisico en los tiempos que corren, te invitamos a operar con nosotros con total confianza y comodidad desde cualquier punto del pais.</p>
+        <div class="contenedor card" style="width: 40%;">
+            <div class="contenedor card-body gridCard">
+                <h5 class="card-title fs-1">Transacciones</h5>
+                <div class="contenedor gridFormTrans">
+                    <select id=transac class="form-select m-2 selTrans" name="transacciones">
+                        <option value="default">Seleccione una transacción</option>
+                    </select>
+                    <select id="divis" class="form-select m-2 selDiv" name="divisas">
+                        <option value="default">Con que divisa desea operar</option>
+                    </select>
+                    <input class="contenedor__input m-2 inpMonto" type="number" placeholder="Ingrese el monto" name="monto" >
+                    <input id="btn" class="contenedor__input m-2 formBtn btnEnviar" type="submit" value="Enviar">
+
+                    <p id="mensaje" class="m-2 msj"></p>
+                </div>
+            </div>   
         </div>
     </main>
     <footer class="gridFooter">
@@ -60,5 +65,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

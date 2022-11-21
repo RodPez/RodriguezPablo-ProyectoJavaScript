@@ -59,6 +59,136 @@ main {
 			& p.textoCentrado{
 				grid-area: texto;
  			}
+			& div.gridCard{
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto ;
+				grid-template-areas: 
+				"titulo" 
+				"formulario" 
+				"registrarse";
+				& h5{
+					grid-area: titulo;
+					align-self: center;
+    				justify-self: center;
+				}
+				& div.formulario{
+					grid-area: formulario;
+					align-self: center;
+					justify-self: center;
+					& form.gridForm{
+						width: 100%;
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: auto auto auto;
+						grid-template-areas: 
+						"user1 user"
+						"pass1 pass"
+						"ingresar cancelar";
+						& label.usuariE{
+							grid-area: user1;
+						}
+						& input.usuarioI{
+							grid-area: user;
+						}
+						& label.passE{
+							grid-area: pass1;
+						}
+						& input.passI{
+							grid-area: pass;
+						}
+						& input.btnIngresar{
+							grid-area: ingresar;
+						}
+						& input.btnCancelar{
+							grid-area: cancelar;
+						}
+						& label.contenedor__etiqueta{
+							font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+							font-size: 1.2rem;
+							letter-spacing: 0.5rem;
+							padding: 0.4rem;
+							margin: 0.6rem;
+							@media only screen and (max-width: 768px){
+								margin: 0.3rem;
+							}
+						}
+						& input{
+							padding: auto;
+							&.contenedor__input{
+							   margin: 0.6rem;
+							   @media only screen and (max-width: 768px){
+								   margin: 0.4rem;
+							   }
+							}
+							&.formBtn{
+								 font-weight: map-get($estiloBtn,fontw);
+								 cursor: pointer;
+								 padding: 0.5rem;
+								 margin: 1rem 1rem 2rem 0;
+								 border: 0.02rem solid map-get($estiloBtn,borde);
+								 background: map-get($estiloBtn,fondo);
+								border-radius: 8px 8px 8px 8px;
+								&.formBtn:hover {
+									   background: map-get($estiloBtn,fondoHover);
+							   }
+							}				
+						}
+					}
+					& div.form-check{
+						font-size: 1.3rem;
+						font-weight: bold;
+						justify-self: end;
+					}
+					& div.gridFormTrans{
+						width: 100%;
+						display: grid;
+						grid-template-columns: 1fr;
+						grid-template-rows: auto auto auto auto auto;
+						grid-template-areas: 
+						"transaccion"
+						"divisa"
+						"monto"
+						"botonEnviar"
+						"mensaje";
+						& select.selTrans{
+							grid-area: transaccion;
+							margin: 2rem;
+						}
+						& select.selDiv{
+							grid-area: divisa;
+							margin: 2rem;
+						}
+						& input.inpMonto{
+							grid-area: monto;
+						}
+						& input.btnEnviar{
+							grid-area: botonEnviar;
+						}
+						& p.msj{
+							grid-area: mensaje;
+							margin: 1rem;
+							font-size: 1.2rem;
+							font-family: Arial, Helvetica, sans-serif;
+							color: black;
+						}
+					}
+				}
+				& a.card-link{
+					grid-area: registrarse;
+					font-family: Futura-Bold;
+					font-size: 2.3rem;
+					text-decoration: none;
+					align-self: flex-start;
+					justify-self: center;
+					font-weight: bolder;
+					color: black;
+				}
+			}
+			& div.card{
+				height: 25%;
+				width: 30%;
+			}
 		}
 	}
 }

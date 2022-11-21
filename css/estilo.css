@@ -101,6 +101,101 @@ main {
             font-size: 1.3rem; } }
       main.gridMain div.contenedor p.textoCentrado {
         grid-area: texto; }
+      main.gridMain div.contenedor div.gridCard {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "titulo"  "formulario"  "registrarse"; }
+        main.gridMain div.contenedor div.gridCard h5 {
+          grid-area: titulo;
+          align-self: center;
+          justify-self: center; }
+        main.gridMain div.contenedor div.gridCard div.formulario {
+          grid-area: formulario;
+          align-self: center;
+          justify-self: center; }
+          main.gridMain div.contenedor div.gridCard div.formulario form.gridForm {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "user1 user" "pass1 pass" "ingresar cancelar"; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm label.usuariE {
+              grid-area: user1; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.usuarioI {
+              grid-area: user; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm label.passE {
+              grid-area: pass1; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.passI {
+              grid-area: pass; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.btnIngresar {
+              grid-area: ingresar; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.btnCancelar {
+              grid-area: cancelar; }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm label.contenedor__etiqueta {
+              font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+              font-size: 1.2rem;
+              letter-spacing: 0.5rem;
+              padding: 0.4rem;
+              margin: 0.6rem; }
+              @media only screen and (max-width: 768px) {
+                main.gridMain div.contenedor div.gridCard div.formulario form.gridForm label.contenedor__etiqueta {
+                  margin: 0.3rem; } }
+            main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input {
+              padding: auto; }
+              main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.contenedor__input {
+                margin: 0.6rem; }
+                @media only screen and (max-width: 768px) {
+                  main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.contenedor__input {
+                    margin: 0.4rem; } }
+              main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.formBtn {
+                font-weight: bold;
+                cursor: pointer;
+                padding: 0.5rem;
+                margin: 1rem 1rem 2rem 0;
+                border: 0.02rem solid #000;
+                background: #eee;
+                border-radius: 8px 8px 8px 8px; }
+                main.gridMain div.contenedor div.gridCard div.formulario form.gridForm input.formBtn.formBtn:hover {
+                  background: #ddd; }
+          main.gridMain div.contenedor div.gridCard div.formulario div.form-check {
+            font-size: 1.3rem;
+            font-weight: bold;
+            justify-self: end; }
+          main.gridMain div.contenedor div.gridCard div.formulario div.gridFormTrans {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas: "transaccion" "divisa" "monto" "botonEnviar" "mensaje"; }
+            main.gridMain div.contenedor div.gridCard div.formulario div.gridFormTrans select.selTrans {
+              grid-area: transaccion;
+              margin: 2rem; }
+            main.gridMain div.contenedor div.gridCard div.formulario div.gridFormTrans select.selDiv {
+              grid-area: divisa;
+              margin: 2rem; }
+            main.gridMain div.contenedor div.gridCard div.formulario div.gridFormTrans input.inpMonto {
+              grid-area: monto; }
+            main.gridMain div.contenedor div.gridCard div.formulario div.gridFormTrans input.btnEnviar {
+              grid-area: botonEnviar; }
+            main.gridMain div.contenedor div.gridCard div.formulario div.gridFormTrans p.msj {
+              grid-area: mensaje;
+              margin: 1rem;
+              font-size: 1.2rem;
+              font-family: Arial, Helvetica, sans-serif;
+              color: black; }
+        main.gridMain div.contenedor div.gridCard a.card-link {
+          grid-area: registrarse;
+          font-family: Futura-Bold;
+          font-size: 2.3rem;
+          text-decoration: none;
+          align-self: flex-start;
+          justify-self: center;
+          font-weight: bolder;
+          color: black; }
+      main.gridMain div.contenedor div.card {
+        height: 25%;
+        width: 30%; }
 
 footer {
   grid-area: footer;
