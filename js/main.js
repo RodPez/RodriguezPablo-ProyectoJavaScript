@@ -35,9 +35,7 @@ while (edadDelCliente < 18 ) {
     console.log("Para operar en nuestro sitio debe ser mayor de edad");
     edadDelCliente = parseInt(prompt("Ingrese una edad válida"))
 }*/
-
-let seleccionarTransaccion = document.querySelector('select[name="transacciones"]'); 
-
+let seleccionarTransaccion = document.querySelector('select[name="transacciones"]');
 ope.forEach(operacion =>{
     let option = document.createElement('option');
 
@@ -46,20 +44,7 @@ ope.forEach(operacion =>{
 
     seleccionarTransaccion.appendChild(option)
 });
-
-console.log(seleccionarTransaccion);
-
-
-let transaccion = seleccionarTransaccion.addEventListener("change",()=>{
-    let option = seleccionarTransaccion.options[seleccionarTransaccion.selectedIndex].value;
-    console.log(option);
-    return option
-})
-
-
-
 let selectorDivisa = document.querySelector('select[name="divisas"]');
-
 money.forEach(mone =>{
     let option = document.createElement('option');
 
@@ -67,23 +52,7 @@ money.forEach(mone =>{
     option.innerText= mone
 
     selectorDivisa.appendChild(option)
-});
-
-console.log(selectorDivisa);
-
-
-    
-
-let divisaACambiar = selectorDivisa.addEventListener("change",()=>{
-    let option=selectorDivisa.options[selectorDivisa.selectedIndex].value;
-    console.log(option);
-    return option
-})
-
-let cash= document.querySelector('input[name="monto"]').value
-let montoACambiar = parseInt(cash)
-console.log(transaccion);
-console.log(divisaACambiar);
+    });
 
 function operacion (valor,monto) {
     return valor * monto;
@@ -95,11 +64,13 @@ let vender;
 function compraDeMoneda(compraMoneda, monto1) {
     comprar= operacion(compraMoneda, monto1)
     console.log("El costo de su operación es de" + " " + comprar + " " + "pesos Argentinos.")
+    return comprar
 }
 
 function ventaDeMoneda(ventaMoneda,monto2) {
     vender=operacion(ventaMoneda,monto2)
     console.log("Usted recibirá" + " " + vender + " " + "pesos Argentinos.")
+    return vender
 }
 
 function buscar(arr,filtro) {
@@ -112,36 +83,65 @@ function buscar(arr,filtro) {
 let indexDivisa;
 
 function divisasVenta(nombreDivisa, montoCambio) {
-    indexDivisa= divisas.indexOf(buscar(divisas,nombreDivisa)),
-    ventaDeMoneda(divisas[indexDivisa].venta,montoCambio);   
+    indexDivisa= divisas.indexOf(buscar(divisas,nombreDivisa));
+    let montoVenta =ventaDeMoneda(divisas[indexDivisa].venta,montoCambio);
+    return document.getElementById("#mensaje").innerText= `Usted recibirá $ ${montoVenta} pesos argentinos. `  
 }
 
 function divisasCompra(nombreDivisa, montoCambio) {
-    indexDivisa= divisas.indexOf(buscar(divisas,nombreDivisa)),
-    compraDeMoneda(divisas[indexDivisa].compra,montoCambio);
+    indexDivisa= divisas.indexOf(buscar(divisas,nombreDivisa));
+    let montoComp =compraDeMoneda(divisas[indexDivisa].compra,montoCambio);
+    return document.getElementById("#mensaje").innerText= `Usted debe abonar $ ${montoComp} pesos argentinos. `
 }
 
-function procesarOperacion(transac,divi,cant) {
+/*function procesarOperacion(transac,divi,montACa) {
     let operacion = transac;
+    let resul;
     if (operacion === "venta") {
-        return divisasVenta(divi , cant)
+        resul = divisasVenta(divi , montACa);
     } else if(operacion==="compra"){
-        return divisasCompra(divi,cant)    
-    } 
-    
-}
+        resul = divisasCompra(divi,montACa)    
+    }
+    console.log(resul);
+    return resul
+}*/
 
 document.getElementById("btn").onclick = (e)=>{
     e.preventDefault();
-    procesarOperacion(transaccion, divisaACambiar,montoACambiar);
-    console.log(procesarOperacion(transaccion, divisaACambiar,montoACambiar));
-    console.log(montoACambiar);
+    let cash= document.querySelector('input[name="monto"]').value
+    let montoACambiar = parseInt(cash)
+     
+
+    
+    let transaccion = seleccionarTransaccion.addEventListener("change",()=>{
+        let option = seleccionarTransaccion.options[seleccionarTransaccion.selectedIndex].value;
+        console.log(option);
+        return option
+    })
+    
+
+    let divisaACambiar = selectorDivisa.addEventListener("change",()=>{
+        let option=selectorDivisa.options[selectorDivisa.selectedIndex].value;
+        console.log(option);
+        return option
+    })
+    if (transaccion==="venta") {
+        divisasVenta(divisaACambiar,montoACambiar)
+        console.log(divisasVenta(divisaACambiar,montoACambiar));
+    }else if (transaccion==="compra") {
+        divisasCompra(divisaACambiar,montoACambiar)
+        console.log(divisasCompra(divisaACambiar,montoACambiar));
+    }
+    console.log(transaccion);
+    console.log(divisaACambiar)
+    console.log(montoACambiar)
 }
 
 
 
 
-/*
+/*procesarOperacion(transaccion, divisaACambiar,montoACambiar);
+procesarOperacion(transaccion, divisaACambiar,montoACambiar);
 return document.querySelector("#mensaje")` Usted recibira ${vender} pesos argentinos.`;
 const registrarse = document.querySelector(".card-link");
 registrarse.addEventListener("click", ()=>{
