@@ -35,28 +35,6 @@ while (edadDelCliente < 18 ) {
     console.log("Para operar en nuestro sitio debe ser mayor de edad");
     edadDelCliente = parseInt(prompt("Ingrese una edad válida"))
 }*/
-let seleccionarTransaccion = document.querySelector('select[name="transacciones"]');
-ope.forEach(operacion =>{
-    let option = document.createElement('option');
-
-    option.value = operacion
-    option.innerText= operacion
-
-    seleccionarTransaccion.appendChild(option)
-});
-let selectorDivisa = document.querySelector('select[name="divisas"]');
-money.forEach(mone =>{
-    let option = document.createElement('option');
-
-    option.value = mone
-    option.innerText= mone
-
-    selectorDivisa.appendChild(option)
-    });
-
-function operacion (valor,monto) {
-    return valor * monto;
-}
 
 let comprar;
 let vender;
@@ -110,16 +88,13 @@ document.getElementById("btn").onclick = (e)=>{
     e.preventDefault();
     let cash= document.querySelector('input[name="monto"]').value
     let montoACambiar = parseInt(cash)
-     
-
-    
+    let seleccionarTransaccion = document.getElementById("transac");
     let transaccion = seleccionarTransaccion.addEventListener("change",()=>{
         let option = seleccionarTransaccion.options[seleccionarTransaccion.selectedIndex].value;
         console.log(option);
         return option
     })
-    
-
+    let selectorDivisa = document.getElementById("divis");
     let divisaACambiar = selectorDivisa.addEventListener("change",()=>{
         let option=selectorDivisa.options[selectorDivisa.selectedIndex].value;
         console.log(option);
@@ -146,5 +121,26 @@ return document.querySelector("#mensaje")` Usted recibira ${vender} pesos argent
 const registrarse = document.querySelector(".card-link");
 registrarse.addEventListener("click", ()=>{
     console.log("Ingrese sus datos");
-})*/
+})
+ope.forEach(operacion =>{
+    let option = document.createElement('option');
+
+    option.value = operacion
+    option.innerText= operacion
+
+    seleccionarTransaccion.appendChild(option)
+});
+money.forEach(mone =>{
+    let option = document.createElement('option');
+
+    option.value = mone
+    option.innerText= mone
+
+    selectorDivisa.appendChild(option)
+    });
+
+function operacion (valor,monto) {
+    return valor * monto;
+}
+*/
 

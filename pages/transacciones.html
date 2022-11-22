@@ -42,11 +42,16 @@
             <div class="contenedor card-body gridCard">
                 <h5 class="card-title fs-1">Transacciones</h5>
                 <div class="contenedor gridFormTrans">
-                    <select id=transac class="form-select m-2 selTrans" name="transacciones">
+                    <select id="transac" class="form-select m-2 selTrans" name="transacciones">
                         <option value="default">Seleccione una transacción</option>
+                        <option value="compra">compra</option>
+                        <option value="venta">venta</option>
                     </select>
                     <select id="divis" class="form-select m-2 selDiv" name="divisas">
                         <option value="default">Con que divisa desea operar</option>
+                        <option value="dolar">dolar</option>
+                        <option value="euro">euro</option>
+                        <option value="real">real</option>
                     </select>
                     <input class="contenedor__input m-2 inpMonto" type="number" placeholder="Ingrese el monto" name="monto" >
                     <input id="btn" class="contenedor__input m-2 formBtn btnEnviar" type="submit" value="Enviar">
