@@ -26,11 +26,6 @@ function buscar(arr,filtro) {
 }
 
 
-
-console.log(usuarios);
-
-
-
 formularioRegister.addEventListener("submit", (e) =>{
     e.preventDefault()
     if (buscar(usuarios, email.value)) {
@@ -39,7 +34,6 @@ formularioRegister.addEventListener("submit", (e) =>{
     }else{
     const newUser = new Usuario (email.value , password.value);
     usuarios.push(newUser);
-    console.log(usuarios);
     }
     localStorage.setItem("usuarios" , JSON.stringify(usuarios))
 });

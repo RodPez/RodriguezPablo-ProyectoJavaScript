@@ -2,8 +2,6 @@ let usuariosAlmacenados = localStorage.getItem("usuarios")
 
 usuariosAlmacenados = JSON.parse(usuariosAlmacenados)
 
-console.log(usuariosAlmacenados);
-
 
 const formularioLogin = document.querySelector(".loGin"),
     checkbox = document.querySelector("#flexCheckDefault"),

@@ -1,0 +1,17 @@
+[
+    {
+       "nombre":"dolar",
+       "compra":153.83,
+       "venta":156
+    },
+    {
+       "nombre":"euro",
+       "compra":151.64,
+       "venta":153
+    },
+    {
+       "nombre":"real",
+       "compra":29.80,
+       "venta":31
+    }
+ ]

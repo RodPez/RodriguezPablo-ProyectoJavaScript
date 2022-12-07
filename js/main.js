@@ -1,42 +1,16 @@
-class Moneda{
-    constructor(nombre,compra,venta){
-        this.nombre=nombre;
-        this.compra=compra;
-        this.venta=venta;
-    }
-
-}
-
 const ope =["compra","venta"];
 
 const money= ["dolar","euro", "real"]
 
-const divisas=[];
+const divisas=[]
 
-const dolar= new Moneda("dolar",153.83,156) ;
-
-const euro= new Moneda("euro",151.64,153);
-
-const real= new Moneda("real",29.80,31 );
-
-divisas.push(dolar,euro,real);
-
-let cotizacionDolar = "La cotización del dolar al día de la fecha es" + " " + dolar.venta +" " +"para la venta" +" "+ "y"+" "+dolar.compra+" "+"para la compra";
-let cotizacionEuro = "La cotización del euro al día de la fecha es" +" " +  euro.venta +" " +"para la venta" +" "+ "y"+" "+euro.compra+" "+"para la compra";
-let cotizacionReal = "La cotizacióin del real al día de la fecha es" + " " +  real.venta +" " +"para la venta" +" "+ "y"+" "+real.compra+" "+"para la compra";
-
-console.log(cotizacionDolar);
-console.log(cotizacionEuro);
-console.log(cotizacionReal);
-
-/*let edadDelCliente = parseInt(prompt("Ingrese su edad"))
-
-while (edadDelCliente < 18 ) {
-    console.log("Para operar en nuestro sitio debe ser mayor de edad");
-    edadDelCliente = parseInt(prompt("Ingrese una edad válida"))
-}*/
-
-
+fetch("../data/datos.json")
+.then(res=>res.json())
+.then(data=>{
+    for (const elemento of data) {
+        divisas.push(elemento);
+    }
+})
 
 function operacion (valor,monto) {
     return valor * monto;
@@ -78,7 +52,7 @@ function divisasCompra(nombreDivisa, montoCambio) {
     return montoComp
 }
 
-document.getElementById("btn").onclick = (e)=>{
+document.getElementById("btn").onclick = ((e)=>{
     e.preventDefault();
     let cash= document.querySelector('input[name="monto"]').value
     let seleccionarTransaccion = document.getElementById('transac').value; 
@@ -93,9 +67,6 @@ document.getElementById("btn").onclick = (e)=>{
         console.log(divisasCompra(selectorDivisa,cash));
         return document.getElementById("mensaje").innerText= `Usted debe abonar $ ${amount} pesos argentinos. `
     }
-    console.log(seleccionarTransaccion);
-    console.log(selectorDivisa)
-    console.log(cash)
-}
+})
 
 
